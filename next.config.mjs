@@ -1,7 +1,5 @@
-// next.config.mjs
 export const nextConfig = {
- eslint: {
-    // ✅ This disables ESLint blocking the build
+  eslint: {
     ignoreDuringBuilds: true,
   },
 };
