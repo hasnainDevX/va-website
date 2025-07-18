@@ -1,26 +1,179 @@
 @import "tailwindcss";
+/* @tailwind preflight; */
+/* @tailwind components; */
+@tailwind utilities;
+/* ✅ Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ✅ Brand Colors - Pink & Black Theme */
+  --brand-hot-pink: #FF2D70;       /* Primary pink (bold, modern) */
+  --brand-deep-black: #000000;     /* Rich black for contrast */
+  --brand-soft-blush: #FFB6C1;     /* Light pink (backgrounds) */
+  --brand-neon-pink: #FF10F0;      /* Accent pink (CTAs, hover) */
+  --brand-warm-gray: #F5F5F5;      /* Neutral background */
+   --brand-charcoal-black: #2C2C2C;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  /* Vibrant Primary Colors */
+  --brand-fruity-pink: #FF5E78;     /* The exact pink-red from apple bg (main color) */
+  --brand-deep-berry: #D23C57;     /* Darker tone for hover states */
+
+  --brand-soft-black: #1A1A1A;          /* Deep black for text */
+  
+  /* Supporting Neutrals */
+  --brand-cream: #fdf5f4;          /* Warm white with pink undertone */
+}
+.soft-black-text {
+  color: var(--brand-soft-black);
+}
+.brand-fruity-pink {
+  background-color: var(--brand-fruity-pink);
+  color: var(--brand-soft-black);
+}
+.fruity-pink-text {
+  color: var(--brand-fruity-pink);
+}
+.brand-soft-blush{
+  background-color: var(--brand-soft-blush);
+  color: var(--brand-deep-black);
+}
+.text-soft-blush{
+  color: var(--brand-soft-blush);
+}
+/* ✅ Base element styles */
+body {
+  background-color: white !important;
+  color: var(--brand-charcoal-black);
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+.feature-card:hover .icon-hover-effect{
+    transition: transform 0.3s ease;
+  background-color: var(--brand-charcoal-black);
+  color: var(--brand-soft-beige);
+  border-radius: 50%;
+  padding: 0 0.45rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-charcoal-black {
+  background-color: var(--brand-charcoal-black);
+  color: var(--brand-soft-beige);
+}
+/* .bg-image {
+  background-image: url("/newimage.jpg");
+  background-size: cover;
+  background-position: center;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ✅ Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-dusty-pink);
+  border-radius: 5px;
+  border: 2px solid var(--brand-deep-berry);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-soft-beige);
+}
+
+.button-cutout {
+  position: relative;
+  filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000)
+    drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000)
+    drop-shadow(4px 4px 0 #000);
+  &:hover {
+    filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000)
+      drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000)
+      drop-shadow(2px 2px 0 #000);
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: calc(100% - 1px);
+    content: "";
+    background: inherit;
+    width: 1rem;
+    height: 100%;
+    clip-path: polygon(
+      23% 19%,
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      29% 79%,
+      9% 80%,
+      0 33%
+    );
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 1px);
+    content: "";
+    background: inherit;
+    width: 1rem;
+    height: 100%;
+    clip-path: polygon(
+      100% 0,
+      74% 28%,
+      100% 29%,
+      100% 70%,
+      84% 78%,
+      100% 100%,
+      0 100%,
+      0 0
+    );
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.gradient-bg {
+  background: #59004a;
+background: linear-gradient(90deg, rgba(89, 0, 74, 1) 0%, rgba(158, 0, 90, 1) 42%, rgba(99, 0, 68, 1) 86%);
 }
+
+/* .accord-toggle{
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  transform: translateY(-10px);
+  z-index: -1;
+  padding: 0 1rem;
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+
+} */

@@ -1,0 +1,171 @@
+"use client";
+import React from "react";
+import Head from "next/head";
+import { Heart, Users, Target, Coffee } from "lucide-react";
+import { useGsap } from "../hooks/useGsap";
+import Image from "next/image";
+
+const About = () => {
+  const scope = useGsap((gsap) => {
+    gsap.from(".fade-in-up", {
+      opacity: 0,
+      y: 60,
+      duration: 1,
+      stagger: 0.15,
+      ease: "power3.out",
+    });
+    gsap.from(".fade-in-left", {
+      opacity: 0,
+      x: -100,
+      duration: 1.2,
+      ease: "power3.out",
+    });
+    gsap.from(".value-card", {
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".values-section",
+        start: "top 80%",
+      },
+    });
+  });
+
+  return (
+    <div ref={scope}>
+      <Head>
+        <title>About - The South London VA</title>
+        <meta
+          name="description"
+          content="Meet Sarah, the founder of The South London VA. Learn about my mission to support female entrepreneurs with warm, professional virtual assistance services."
+        />
+      </Head>
+
+      <section className="pt-40 pb-24 sm:pt-48 sm:pb-32 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative fade-in-left">
+              <div className="absolute -top-4 -right-4 w-full h-full bg-brand-soft-beige rounded-2xl transform rotate-[3deg]"></div>
+              <Image
+                width={600}
+                height={400}
+                alt="Founder Sarah, a professional woman smiling in a bright, modern setting"
+                className="rounded-2xl shadow-2xl w-full h-[400px] sm:h-[600px] object-cover relative z-10"
+                src="/dani-image."
+              />
+            </div>
+            <div className="space-y-6 text-center lg:text-left">
+              <h1 className="font-playfair text-5xl sm:text-6xl font-bold text-brand-charcoal-black fade-in-up">
+                Hello, I'm Dani
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-700 font-inter leading-relaxed fade-in-up">
+                A South London based, ex award nominated sales
+                professional with 10+ years in the events & media industry.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 font-inter leading-relaxed fade-in-up">
+                I get a kick out of driving business growth, alongside writing
+                long form content to engage and build online communities. I’ve
+                always been inspired by people who have the courage to start and
+                build their own businesses, and wanted to be part of that
+                network - so I quit my 9-5 to focus on supporting community
+                driven founders who are ready to scale. I’m able to do
+                everything that your regular Virtual Assistant does, but the
+                twist? I’m also the person who refines and tweaks your marketing
+                & sales copy, builds your prospect list, and drives your new
+                business conversations. So, Are you ready to scale? Apply to
+                work with me here
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 sm:py-32 bg-brand-charcoal-black text-brand-ivory-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-playfair text-4xl sm:text-5xl font-bold mb-8 fade-in-up">
+              My Story
+            </h2>
+            <div className="space-y-6 text-lg text-brand-soft-beige font-inter leading-relaxed">
+              <p className="fade-in-up">
+                My journey began in the bustling world of corporate admin, where
+                I honed my skills in organization and problem-solving. But I
+                always felt something was missing – the personal connection and
+                meaningful impact I craved.
+              </p>
+              <p className="fade-in-up">
+                The turning point came when I started helping a friend with her
+                growing online business. Seeing how my support freed her to
+                focus on her creative work was incredibly fulfilling. That's
+                when I realized my purpose: being the reliable backbone that
+                allows female entrepreneurs to shine.
+              </p>
+              <p className="fade-in-up">
+                Based in South London, I've built The South London VA on the
+                principles of warmth, reliability, and genuine care. I don't
+                just complete tasks – I become an extension of your team.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 sm:py-32 values-section">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="font-playfair text-4xl sm:text-5xl font-bold text-brand-charcoal-black mb-6">
+              My Values
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-700 font-inter max-w-3xl mx-auto">
+              These core principles guide everything I do and shape how I work
+              with each client.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Heart className="text-brand-antique-gold" size={40} />,
+                title: "Genuine Care",
+                description:
+                  "I truly care about your success and treat your business as if it were my own.",
+              },
+              {
+                icon: <Users className="text-brand-antique-gold" size={40} />,
+                title: "Personal Connection",
+                description:
+                  "Building real relationships, not just professional transactions.",
+              },
+              {
+                icon: <Target className="text-brand-antique-gold" size={40} />,
+                title: "Excellence",
+                description:
+                  "Delivering high-quality work with attention to detail and pride.",
+              },
+              {
+                icon: <Coffee className="text-brand-antique-gold" size={40} />,
+                title: "Warmth",
+                description:
+                  "Bringing a friendly, supportive approach to every interaction.",
+              },
+            ].map((value) => (
+              <div
+                key={value.title}
+                className="value-card text-center bg-brand-soft-beige/30 p-8 rounded-xl"
+              >
+                <div className="mb-6 flex justify-center">{value.icon}</div>
+                <h3 className="font-playfair text-2xl font-semibold text-brand-charcoal-black mb-4">
+                  {value.title}
+                </h3>
+                <p className="text-gray-700 font-inter leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default About;
