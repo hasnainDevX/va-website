@@ -117,7 +117,7 @@ export default function HeroSection() {
             </div>
 
             {/* Floating Card 1 - Boost Productivity */}
-            <div className="absolute -top-20 right-4 bg-white rounded-xl p-4 shadow-xl max-w-xs backdrop-blur-sm">
+            <div className="lg:block hidden absolute -top-20 right-4 bg-white rounded-xl p-4 shadow-xl max-w-xs backdrop-blur-sm">
               <div className="flex items-start gap-3">
                 <div className="bg-purple-100 p-2 rounded-lg">
                   <Rocket className="w-5 h-5 text-purple-600" />
@@ -134,7 +134,7 @@ export default function HeroSection() {
             </div>
 
             {/* Floating Card 2 - Tailored Business */}
-            <div className="absolute top-60 right-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-4 shadow-xl max-w-xs text-white">
+            <div className="lg:block hidden absolute top-60 right-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-4 shadow-xl max-w-xs text-white">
               <div className="flex items-start gap-3">
                 <div className="bg-white/20 p-2 rounded-lg">
                   <BarChart3 className="w-5 h-5 text-white" />
