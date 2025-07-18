@@ -4,7 +4,7 @@ import { Rocket, BarChart3 } from "lucide-react";
 export default function HeroSection() {
   return (
     <div
-      className="min-h-screen relative gradient-bg mb-20"
+      className="min-h-screen relative gradient-bg md:mb-20 overflow-x-hidden"
       style={{
         backgroundSize: "100% 100%, 6rem 4rem, 6rem 4rem",
       }}
@@ -21,7 +21,7 @@ export default function HeroSection() {
 
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-28">
-        <div className="flex gap-12 items-center min-h-[80vh]">
+        <div className="flex md:flex-row flex-col gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
           <div className="space-y-8 flex-[60%] py-8 w-full">
             {/* Badge */}

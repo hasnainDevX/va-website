@@ -11,6 +11,7 @@ export default function AboutSection() {
   return (
     <section className="py-28 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
+        <h1 className="text-5xl font-bold text-center mb-12">About Me</h1>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Image with overlay */}
           <div className="relative ">

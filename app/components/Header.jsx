@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+        className={`overflow-hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
           isScrolled || isOpen
             ? "bg-[#FFB6C1]/10 backdrop-blur-lg shadow-md" // Changed from FDFBF8 to soft blush
             : "bg-transparent"
@@ -57,7 +57,7 @@ const Header = () => {
                 height={50}
                 className="inline-block mr-2 mb-1 rounded-full"
               />
-              <span className="underline-offset-4 underline underline-[#FF2D70] text-white hover:text-[#f7677f]">
+              <span className="underline-offset-4 underline text-sm sm:text-md md:text-xl lg:text-2xl underline-[#FF2D70] text-[#f7677f]">
                 The South London VA
               </span>{" "}
               {/* Changed underline color */}
@@ -73,8 +73,8 @@ const Header = () => {
                     pathname === item.path
                       ? "text-[#FF2D70]"
                       : isScrolled
-                      ? "text-[#FF2D70]"
-                      : "text-[#ffd0d0]"
+                      ? "text-[#e60049]"
+                      : "text-[#300036]"
                   }
                   }`}
                 >
@@ -116,12 +116,15 @@ const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden fixed inset-0 bg-[#FFB6C1] z-40 flex flex-col items-center justify-center space-y-8" // Changed mobile menu background
+            className="md:hidden fixed inset-0 bg-[#FFB6C1] py-20 px-4 z-40 flex flex-col items-center justify-center space-y-8" // Changed mobile menu background
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
+            <div className="flex flex-col items-center space-y-4 p-40">
+
+            
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -157,6 +160,7 @@ const Header = () => {
                 </Link>
               </Button>
             </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

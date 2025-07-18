@@ -33,7 +33,7 @@ export default function FAQSection() {
   return (
     <section className="container mx-auto px-4 py-12 md:py-20 lg:py-24" style={{ fontFamily: "Poppins, sans-serif" }}>
       {/* Main Heading */}
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 md:mb-12 text-brand-deep-black">
+      <h1 className="text-2xl md:text-3xl lg:text-5xl text-center px-12 font-extrabold leading-tight mb-8 md:mb-12 text-brand-deep-black">
         Answers To The <span className="text-highlight-orange">Most</span> Common <span className="text-highlight-purple">Questions</span> Business Owners Ask.
       </h1>
 

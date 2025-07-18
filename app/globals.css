@@ -49,6 +49,7 @@ body {
   color: var(--brand-charcoal-black);
   font-family: "Inter", sans-serif;
   line-height: 1.7;
+  overflow-x: hidden !important;
 }
 
 
